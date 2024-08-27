@@ -18,7 +18,8 @@ const { noMarginTop = false } = Astro.props;
     <div class="copyright-wrapper">
       <span>Copyright &#169; {currentYear}</span>
       <span class="separator">&nbsp;|&nbsp;</span>
-      <span>All rights reserved.</span>
+      <span>All rights reserved. </span>
+      <span>&nbsp;Developed by <code class="developer">yours truly</code></span>
     </div>
   </div>
 </footer>
@@ -41,5 +42,10 @@ const { noMarginTop = false } = Astro.props;
   }
   .separator {
     @apply hidden sm:inline;
+  }
+  .developer {
+    border-radius: 0.5rem;
+    background-color: rgba(var(--color-card-muted), 0.25);
+    padding: 0.4rem;
   }
 </style>

@@ -125,3 +125,23 @@
     @apply outline-2 outline-offset-1 outline-skin-fill focus-visible:no-underline focus-visible:outline-dashed;
   }
 }
+
+.skill {
+  border-radius: .25rem;
+  background-color: rgba(var(--color-card), .75);
+  padding: .25rem;
+  line-height: 2.5rem;
+}
+
+html[data-theme="light"] .skill-title {
+  @apply prose-lg text-pink-700 font-bold
+}
+
+
+html[data-theme="dark"] .skill-title {
+  @apply prose-lg text-pink-400 font-bold
+}
+
+.skill-section {
+  @apply mt-1 mb-2
+}

@@ -1,0 +1,116 @@
+---
+const skills = {
+  languages: ["Javascript", "Typescript", "Java", "Python"],
+  frontend: [
+    "HTML",
+    "CSS",
+    "Angular",
+    "React",
+    "Redux",
+    "NextJS",
+    "Astro",
+    "React-Native",
+    "shadcn",
+    "Tailwind",
+    "Bootstrap",
+    "WordPress",
+  ],
+  backend: ["Express", "Serverless", "Springboot"],
+  db: ["mysql", "Postgres", "turso", "mongo", "sqlite"],
+  clouds: ["AWS", "Azure"],
+  shell: ["zsh", "bash"],
+};
+enum skillTitle {
+  frontend = "Frontend",
+}
+---
+
+<div>
+  <!-- {
+    Object.keys(skills).map(key => {
+      <p class="skill-section">
+        <h4 class="skill-title">{skillTitle.frontend}</h4>
+        {/* {skills[key].map(s => (
+          <>
+            <code class="skill">{s}</code>&nbsp;
+          </>
+        ))} */}
+      </p>;
+    })
+  } -->
+  <p class="skill-section">
+    <h4 class="skill-title">{skillTitle.frontend}</h4>
+    {
+      skills['frontend'].map(s => (
+        <>
+          <code class="skill">{s}</code>&nbsp;
+        </>
+      ))
+    }
+  </p>
+  <p class="skill-section">
+    <h4 class="skill-title">Frontend</h4>
+    {
+      skills.frontend.map(s => (
+        <>
+          <code class="skill">{s}</code>&nbsp;
+        </>
+      ))
+    }
+  </p>
+  <br />
+  <p class="skill-section">
+    <h4 class="skill-title">Backend</h4>
+    {
+      skills.backend.map(s => (
+        <>
+          <code class="skill">{s}</code>&nbsp;
+        </>
+      ))
+    }
+  </p>
+  <br />
+  <p class="skill-section">
+    <h4 class="skill-title">Languages known</h4>
+    {
+      skills.languages.map(s => (
+        <>
+          <code class="skill">{s}</code>&nbsp;
+        </>
+      ))
+    }
+  </p>
+  <br />
+  <p class="skill-section">
+    <h4 class="skill-title">Databases</h4>
+    {
+      skills.db.map(s => (
+        <>
+          <code class="skill">{s}</code>&nbsp;
+        </>
+      ))
+    }
+  </p>
+  <br />
+  <p class="skill-section">
+    <h4 class="skill-title">Cloud Providers</h4>
+    {
+      skills.clouds.map(s => (
+        <>
+          <code class="skill">{s}</code>&nbsp;
+        </>
+      ))
+    }
+  </p>
+  <br />
+  <p class="skill-section">
+    <h4 class="skill-title">Favorite shell</h4>
+    {
+      skills.shell.map(s => (
+        <>
+          <code class="skill">{s}</code>&nbsp;
+        </>
+      ))
+    }
+  </p>
+</div>
