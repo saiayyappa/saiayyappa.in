@@ -20,9 +20,9 @@ const skills = {
   clouds: ["AWS", "Azure"],
   shell: ["zsh", "bash"],
 };
-enum skillTitle {
-  frontend = "Frontend",
-}
+// enum skillTitle {
+//   frontend = "Frontend",
+// }
 ---
 
 <div>
@@ -38,16 +38,6 @@ enum skillTitle {
       </p>;
     })
   } -->
-  <p class="skill-section">
-    <h4 class="skill-title">{skillTitle.frontend}</h4>
-    {
-      skills['frontend'].map(s => (
-        <>
-          <code class="skill">{s}</code>&nbsp;
-        </>
-      ))
-    }
-  </p>
   <p class="skill-section">
     <h4 class="skill-title">Frontend</h4>
     {
