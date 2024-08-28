@@ -1,0 +1,41 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import Scribbles from "@layouts/Scribbles.astro";
+import ScribbleDetails from "@layouts/ScribbleDetails.astro";
+import getSortedScribbles from "@utils/getSortedScribbles";
+import getPageNumbers from "@utils/getPageNumbers";
+import getPagination from "@utils/getPagination";
+
+export interface Props {
+  scribble: CollectionEntry<"blog">;
+}
+
+export async function getStaticPaths() {
+  const scribbles = await getCollection("blog", ({ data }) => !data.draft);
+
+  const scribbleResult = scribbles.map(scribble => ({
+    params: { slug: scribble.slug },
+    props: { scribble },
+  }));
+
+  const pagePaths = getPageNumbers(scribbles.length).map(pageNum => ({
+    params: { slug: String(pageNum) },
+  }));
+
+  return [...scribbleResult, ...pagePaths];
+}
+
+const { slug } = Astro.params;
+const { scribble } = Astro.props;
+
+const scribbles = await getCollection("blog");
+
+const sortedScribbles = getSortedScribbles(scribbles);
+
+const pagination = getPagination({
+  scribbles: sortedScribbles,
+  page: slug,
+});
+---
+
+{scribble ? <ScribbleDetails scribble={scribble} /> : <Scribbles {...pagination} />}

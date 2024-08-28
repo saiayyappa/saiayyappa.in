@@ -1,25 +1,25 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
-import TagPosts from "@layouts/TagPosts.astro";
+import TagScribbles from "@layouts/TagScribbles.astro";
 import getUniqueTags from "@utils/getUniqueTags";
-import getPostsByTag from "@utils/getPostsByTag";
+import getScribblesByTag from "@utils/getScribblesByTag";
 import getPageNumbers from "@utils/getPageNumbers";
 import getPagination from "@utils/getPagination";
 
 export interface Props {
-  post: CollectionEntry<"blog">;
+  scribble: CollectionEntry<"blog">;
   tag: string;
   tagName: string;
 }
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog");
+  const scribbles = await getCollection("blog");
 
-  const tags = getUniqueTags(posts);
+  const tags = getUniqueTags(scribbles);
 
   return tags.flatMap(({ tag, tagName }) => {
-    const tagPosts = getPostsByTag(posts, tag);
-    const totalPages = getPageNumbers(tagPosts.length);
+    const tagScribbles = getScribblesByTag(scribbles, tag);
+    const totalPages = getPageNumbers(tagScribbles.length);
 
     return totalPages.map(page => ({
       params: { tag, page },
@@ -31,14 +31,14 @@ export async function getStaticPaths() {
 const { page } = Astro.params;
 const { tag, tagName } = Astro.props;
 
-const posts = await getCollection("blog", ({ data }) => !data.draft);
+const scribbles = await getCollection("blog", ({ data }) => !data.draft);
 
-const postsByTag = getPostsByTag(posts, tag);
+const scribblesByTag = getScribblesByTag(scribbles, tag);
 
 const pagination = getPagination({
-  posts: postsByTag,
+  scribbles: scribblesByTag,
   page,
 });
 ---
 
-<TagPosts {...pagination} {tag} {tagName} />
+<TagScribbles {...pagination} {tag} {tagName} />

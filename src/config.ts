@@ -4,13 +4,13 @@ export const SITE: Site = {
   website: "https://saiayyappa-in.vercel.app/", // replace this with your deployed domain
   author: "Saiayyappa",
   profile: "https://saiayyappa-in.vercel.app/",
-  desc: "My portfolio with scribble notes published as posts",
+  desc: "My portfolio with scribble notes for me to refer in need",
   title: "saiayyappa",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
-  postPerIndex: 4,
-  postPerPage: 3,
-  scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
+  scribblePerIndex: 4,
+  scribblePerPage: 3,
+  scheduledScribbleMargin: 15 * 60 * 1000, // 15 minutes
 };
 
 

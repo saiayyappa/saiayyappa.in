@@ -1,32 +1,32 @@
 ---
 import { getCollection } from "astro:content";
-import TagPosts from "@layouts/TagPosts.astro";
-import getPostsByTag from "@utils/getPostsByTag";
+import TagScribbles from "@layouts/TagScribbles.astro";
+import getScribblesByTag from "@utils/getScribblesByTag";
 import getPagination from "@utils/getPagination";
 import getUniqueTags from "@utils/getUniqueTags";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog");
+  const scribbles = await getCollection("blog");
 
-  const tags = getUniqueTags(posts);
+  const tags = getUniqueTags(scribbles);
 
   return tags.map(({ tag, tagName }) => {
     return {
       params: { tag },
-      props: { tag, tagName, posts },
+      props: { tag, tagName, scribbles },
     };
   });
 }
 
-const { tag, tagName, posts } = Astro.props;
+const { tag, tagName, scribbles } = Astro.props;
 
-const postsByTag = getPostsByTag(posts, tag);
+const scribblesByTag = getScribblesByTag(scribbles, tag);
 
 const pagination = getPagination({
-  posts: postsByTag,
+  scribbles: scribblesByTag,
   page: 1,
   isIndex: true,
 });
 ---
 
-<TagPosts {...pagination} {tag} {tagName} />
+<TagScribbles {...pagination} {tag} {tagName} />

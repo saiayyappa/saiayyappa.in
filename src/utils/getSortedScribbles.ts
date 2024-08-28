@@ -1,9 +1,9 @@
 import type { CollectionEntry } from "astro:content";
-import postFilter from "./postFilter";
+import scribbleFilter from "./scribbleFilter";
 
-const getSortedPosts = (posts: CollectionEntry<"blog">[]) => {
-  return posts
-    .filter(postFilter)
+const getSortedScribbles = (scribbles: CollectionEntry<"blog">[]) => {
+  return scribbles
+    .filter(scribbleFilter)
     .sort(
       (a, b) =>
         Math.floor(
@@ -15,4 +15,4 @@ const getSortedPosts = (posts: CollectionEntry<"blog">[]) => {
     );
 };
 
-export default getSortedPosts;
+export default getSortedScribbles;
