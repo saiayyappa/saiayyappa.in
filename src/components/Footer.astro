@@ -41,9 +41,10 @@ const { noMarginTop = false } = Astro.props;
   .separator {
     @apply hidden sm:inline;
   }
-  .developer {
-    border-radius: 0.5rem;
-    background-color: rgba(var(--color-card-muted), 0.25);
-    padding: 0.4rem;
+  html[data-theme="light"] .developer {
+    @apply inline-flex items-center rounded-md bg-pink-50 px-2 py-1 text-sm font-bold text-pink-700 ring-1 ring-inset ring-pink-700/10
+  }
+  html[data-theme="dark"] .developer {
+    @apply inline-flex items-center rounded-md bg-slate-500/25 px-2 py-1 text-sm font-bold text-pink-200 ring-1 ring-inset ring-pink-700/10
   }
 </style>
