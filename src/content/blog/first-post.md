@@ -1,13 +1,13 @@
 ---
 author: saiayyappa
 pubDatetime: 2024-08-28T12:58:42.000+05:30
-modDatetime: 2024-08-28T12:58:42.000+05:30
+modDatetime: 2024-08-28T08:13:27.142+05:30
 title: Hello World!!!
 featured: false
 draft: false
 tags:
   - intro
-description: My rant to being a web developer 🤫 #!
+description: My rant to being a web developer 🤫
 ---
 
 TLDR! In short, don't read further
