@@ -8,6 +8,7 @@ draft: false
 tags:
   - full-stack
   - journey
+  - links
 description: The journey I took to become a full stack engineer
 ---
 
@@ -174,5 +175,8 @@ Following sites where somethings I used a lot to refer to when in need. I don't 
 - https://developer.mozilla.org/en-US/docs/Web/HTML/Element
 - https://codeburst.io/understanding-memoization-in-3-minutes-2e58daf33a19
 - https://scotch.io/tutorials/understanding-memoization-in-javascript
+
+## Conclusion
+This won't be updated anymore.
 
 > Okay, Ciao! my future self!
