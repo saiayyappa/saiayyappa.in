@@ -40,6 +40,10 @@ My journey towards it started with the help of my good friend who guided me with
 
 That's all! I became a web developer. Funny thing was I sometimes speculate, why I even code? But it's out of joy. Hope reading this when I am old, will give me same invigoration/enthusiam.
 
-The point of scribbling this is purely to pass time. No useful thing has been achieved but still writing is a good hobby.
+The point of scribbling this is purely to pass time. No useful thing has been achieved but still writing is a good hobby I am trying to cultivate.
+
+I know this rant is not enough and it ended anti-climatic. Expect this till the end.
+
+PS.: I don't use gippity for writing stuffs. Since I have mild OCD (self-diagnosed), I tend to do stuffs myself mostly.
 
 > Okay, Ciao! my future self!
